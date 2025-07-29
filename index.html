@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mihin Fernando | Web Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     * {
       margin: 0;
@@ -94,6 +95,24 @@
       margin-bottom: 0.8rem;
     }
 
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-icons a {
+      color: #00adb5;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .contact-icons a:hover {
+      transform: scale(1.2);
+      color: #64ffda;
+    }
+
     .footer {
       text-align: center;
       padding: 2rem;
@@ -104,7 +123,7 @@
 </head>
 <body>
   <header>
-    <img src="mypic.jpeg" alt="Mihin Fernando" class="profile-pic" />
+    <img src="your-face.jpg" alt="Mihin Fernando" class="profile-pic" />
     <!-- Replace 'your-face.jpg' with your own image file -->
     <h1>Hi, I'm <span>Mihin Fernando</span></h1>
     <p>Web Developer | Creative Thinker | Code Enthusiast</p>
@@ -123,19 +142,19 @@
     <h2>Projects</h2>
     <div class="projects">
       <div class="project-card">
-        <img src="project1.png" alt="Project 1" />
+        <img src="project1.jpg" alt="Project 1" />
         <!-- Replace with your project image -->
         <h3>Project One</h3>
         <p>A cool modern website made for a startup.</p>
       </div>
       <div class="project-card">
-        <img src="project2.png" alt="Project 2" />
+        <img src="project2.jpg" alt="Project 2" />
         <!-- Replace with your project image -->
         <h3>Project Two</h3>
         <p>Landing page with animations and responsive layout.</p>
       </div>
       <div class="project-card">
-        <img src="project3.png" alt="Project 3" />
+        <img src="project3.jpg" alt="Project 3" />
         <!-- Replace with your project image -->
         <h3>Project Three</h3>
         <p>A portfolio website for a photographer client.</p>
@@ -145,7 +164,11 @@
 
   <section>
     <h2>Contact</h2>
-    <p>Email: mihinfernando23@gmail.com<br>LinkedIn: linkedin.com/in/mihin-fernando-39b634313<br>GitHub: github.com/MihinFernando</p>
+    <div class="contact-icons">
+      <a href="mailto:mihinfernando23@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://linkedin.com/in/mihin-fernando-39b634313" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/MihinFernando" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
   </section>
 
   <div class="footer">
