@@ -1,179 +1,324 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mihin Fernando | Web Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mihin Fernando | Web Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Playfair+Display:wght@700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* Global Styles based on Intellect Initiative */
+        :root {
+            --primary-dark: #001233; /* Similar to Intellect's gs-colorone */
+            --accent-red: #f24d51; /* Similar to Intellect's gs-colortwo */
+            --accent-gold: #e2c19d; /* Similar to Intellect's gs-colorthree */
+            --light-text: #f5ebdf; /* Similar to Intellect's gs-colorfour */
+            --soft-white: #f5f5f5; /* Similar to Intellect's gs-colorfive */
+            --body-bg: #000000; /* Direct black background */
+            --card-bg: #142162; /* A deeper blue-grey for cards, inspired by pg-a-19-r */
+            --footer-bg: #031530; /* Darker footer, similar to startupzy-bg-footer */
+            --text-color: #B7BFCB; /* Slightly lighter body text */
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #121212;
-      color: #f0f0f0;
-      overflow-x: hidden;
-    }
+            /* Fonts for a similar feel */
+            --heading-font: 'Playfair Display', serif; /* For a 'Gallery Modern' feel */
+            --body-font: 'Poppins', sans-serif; /* For a clean, modern feel */
+            --code-font: 'Roboto Mono', monospace; /* For technical text if needed */
+        }
 
-    header {
-      padding: 2rem;
-      text-align: center;
-      background: #1e1e1e;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    header:hover {
-      background: #2a2a2a;
-    }
+        body {
+            font-family: var(--body-font);
+            background: var(--body-bg);
+            color: var(--text-color);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-    h1 span {
-      color: #00adb5;
-    }
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-    .profile-pic {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #00adb5;
-      margin: 1rem auto;
-      display: block;
-      transition: transform 0.3s ease;
-    }
+        a:hover {
+            color: var(--accent-red);
+        }
 
-    .profile-pic:hover {
-      transform: scale(1.05);
-    }
+        /* Header Section */
+        header {
+            padding: 4rem 2rem; /* Increased padding */
+            text-align: center;
+            background: var(--primary-dark);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* Stronger shadow */
+            transition: all 0.5s ease;
+            position: relative; /* For potential future effects */
+            overflow: hidden; /* To contain potential header animations */
+        }
 
-    section {
-      padding: 3rem 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
+        header:hover {
+            background: darken(var(--primary-dark), 5%); /* Slightly darker on hover */
+        }
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #00adb5;
-    }
+        h1 {
+            font-family: var(--heading-font);
+            font-size: 3.5rem; /* Larger heading */
+            margin-top: 1.5rem;
+            color: var(--soft-white);
+        }
 
-    p {
-      line-height: 1.7;
-      opacity: 0.9;
-    }
+        h1 span {
+            color: var(--accent-red); /* Your name in accent red */
+        }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+            color: var(--light-text);
+        }
 
-    .project-card {
-      background: #1f1f1f;
-      padding: 1rem;
-      border-radius: 12px;
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
+        .profile-pic {
+            width: 180px; /* Slightly larger image */
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-gold); /* Gold border */
+            margin: 0 auto;
+            display: block;
+            box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.1); /* Subtle outer glow */
+            transition: transform 0.4s ease, border-color 0.4s ease;
+        }
 
-    .project-card:hover {
-      transform: translateY(-10px);
-      background: #2b2b2b;
-    }
+        .profile-pic:hover {
+            transform: scale(1.08) rotate(3deg); /* More dynamic hover */
+            border-color: var(--accent-red); /* Change border color on hover */
+        }
 
-    .project-card img {
-      width: 100%;
-      border-radius: 10px;
-      height: 160px;
-      object-fit: cover;
-      margin-bottom: 0.8rem;
-    }
+        /* Section Styling */
+        section {
+            padding: 5rem 2rem; /* More vertical space */
+            max-width: 1000px; /* Wider content area */
+            margin: auto;
+        }
 
-    .contact-icons {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      font-size: 2rem;
-      margin-top: 1.5rem;
-    }
+        h2 {
+            font-family: var(--heading-font);
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--accent-red); /* Section titles in accent red */
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
 
-    .contact-icons a {
-      color: #00adb5;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
+        h2::after { /* Underline effect */
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent-gold);
+            border-radius: 5px;
+        }
 
-    .contact-icons a:hover {
-      transform: scale(1.2);
-      color: #64ffda;
-    }
+        section p {
+            font-size: 1.1rem;
+            max-width: 700px; /* Control line length for readability */
+            margin: 0 auto 1.5rem auto;
+            text-align: center;
+            color: var(--light-text);
+        }
 
-    .footer {
-      text-align: center;
-      padding: 2rem;
-      background: #1a1a1a;
-      color: #888;
-    }
-  </style>
+        /* Projects Section */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Larger minimum card size */
+            gap: 3rem; /* More space between cards */
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 1.5rem; /* More padding */
+            border-radius: 15px; /* Softer corners */
+            transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4); /* Stronger shadow */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px) rotate(1deg); /* More pronounced hover */
+            background: lighten(var(--card-bg), 5%);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 10px;
+            height: 200px; /* Taller project images */
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1); /* Subtle image border */
+        }
+
+        .project-card h3 {
+            font-family: var(--heading-font);
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: var(--accent-gold);
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-align: left; /* Project descriptions left-aligned */
+            margin-bottom: 0; /* Remove bottom margin from project p */
+        }
+
+        /* Contact Section */
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem; /* More space between icons */
+            font-size: 2.5rem; /* Larger icons */
+            margin-top: 2.5rem;
+        }
+
+        .contact-icons a {
+            color: var(--accent-gold);
+            transition: transform 0.4s ease, color 0.4s ease;
+        }
+
+        .contact-icons a:hover {
+            transform: scale(1.3) rotate(5deg); /* Dynamic hover */
+            color: var(--accent-red);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2.5rem; /* More padding */
+            background: var(--footer-bg);
+            color: #717C90; /* A soft grey */
+            font-size: 0.95rem;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+            }
+            h2 {
+                font-size: 2.2rem;
+            }
+            section p {
+                font-size: 1rem;
+            }
+            .projects {
+                grid-template-columns: 1fr; /* Stack projects on small screens */
+            }
+            .project-card {
+                padding: 1rem;
+            }
+            .project-card h3 {
+                font-size: 1.5rem;
+            }
+            .contact-icons {
+                font-size: 2rem;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header, section, .footer {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+                border-width: 3px;
+            }
+            .contact-icons {
+                gap: 1.5rem;
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="your-face.jpeg" alt="Mihin Fernando" class="profile-pic" />
-    <!-- Replace 'your-face.jpg' with your own image file -->
-    <h1>Hi, I'm <span>Mihin Fernando</span></h1>
-    <p>Web Developer | Creative Thinker | Code Enthusiast</p>
-  </header>
+    <header>
+        <img src="your-face.jpeg" alt="Mihin Fernando" class="profile-pic" />
+        <h1>Hi, I'm <span>Mihin Fernando</span></h1>
+        <p>Web Developer | Creative Thinker | Code Enthusiast</p>
+    </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I'm a passionate web developer who loves building beautiful, functional websites.
-      I specialize in HTML, CSS, JavaScript, and modern frameworks. I aim to create
-      smooth, interactive experiences with a strong focus on design and performance.
-    </p>
-  </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I'm a passionate web developer with a keen eye for design and a drive to build exceptional digital experiences. My expertise spans across modern web technologies, from crafting responsive layouts with HTML and CSS to dynamic functionalities with JavaScript and contemporary frameworks. I thrive on bringing ideas to life through clean, efficient code and a strong focus on user interaction and performance.
+        </p>
+    </section>
 
-  <section>
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <img src="project1.png" alt="Project 1" />
-        <!-- Replace with your project image -->
-        <h3>Project One</h3>
-        <p>A cool modern website made for a startup.</p>
-      </div>
-      <div class="project-card">
-        <img src="project2.png" alt="Project 2" />
-        <!-- Replace with your project image -->
-        <h3>Project Two</h3>
-        <p>Landing page with animations and responsive layout.</p>
-      </div>
-      <div class="project-card">
-        <img src="project3.png" alt="Project 3" />
-        <!-- Replace with your project image -->
-        <h3>Project Three</h3>
-        <p>A portfolio website for a photographer client.</p>
-      </div>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <img src="project1.png" alt="Project 1" />
+                <h3>Project One Title</h3>
+                <p>A sleek, modern website designed for a budding tech startup, focusing on clean aesthetics and intuitive user flow.</p>
+            </div>
+            <div class="project-card">
+                <img src="project2.png" alt="Project 2" />
+                <h3>Project Two Title</h3>
+                <p>A dynamic landing page featuring subtle animations and a fully responsive design, ensuring a seamless experience across all devices.</p>
+            </div>
+            <div class="project-card">
+                <img src="project3.png" alt="Project 3" />
+                <h3>Project Three Title</h3>
+                <p>A visually rich online portfolio crafted for a professional photographer, designed to showcase their work with elegance and impact.</p>
+            </div>
+            </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <p>
+            I'm always open to new opportunities and collaborations. Feel free to connect with me!
+        </p>
+        <div class="contact-icons">
+            <a href="mailto:mihinfernando23@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/mihin-fernando-39b634313" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/MihinFernando" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+    </section>
+
+    <div class="footer">
+        &copy; 2025 Mihin Fernando. All Rights Reserved.
     </div>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <div class="contact-icons">
-      <a href="mailto:mihinfernando23@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/mihin-fernando-39b634313" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/MihinFernando" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-    </div>
-  </section>
-
-  <div class="footer">
-    &copy; 2025 Mihin Fernando. All Rights Reserved.
-  </div>
-
 </body>
 </html>
